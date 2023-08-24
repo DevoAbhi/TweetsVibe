@@ -1,8 +1,23 @@
+:root {
+  /* --deep-color: #A973FF; //good */
+  /* --deep-color: #6237A0; */
+  --deep-color: #8B3EFF;
+  --mid-color: #9357FF;
+  /* --mid-color: #D2AFFF; */
+  --light-color: #E7D1FF;
+
+}
+
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
