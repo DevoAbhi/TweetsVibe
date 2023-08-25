@@ -16,3 +16,4 @@ API.interceptors.request.use((req) => {
 export const signup = async (userData) => await API.post('/api/signup', userData);
 export const login = async (userData) => await API.post('/api/login', userData);
 export const search = async (searchData) => await API.post('/api/scrap-twitter', searchData);
+export const getSearchData = async () => await API.get('/api/search-data');
