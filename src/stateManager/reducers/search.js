@@ -5,6 +5,10 @@ const searchReducer = (state = { searchData: null }, action) => {
 
             return { ...state, searchData: action.payload }
 
+        case "GET SEARCH DATA":
+
+            return {...state, searchData: action.payload}
+
         default:
             return state;
     }
