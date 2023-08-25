@@ -73,3 +73,21 @@ export const search = (formData) => async (dispatch) => {
         console.log("Error while searching word -> ", error);
     }
 }
+
+export const getAllSearchData = () => async (dispatch) => {
+    try {
+        const {data} = await api.getSearchData();
+        console.log(data);
+
+        dispatch({
+            type: "GET SEARCH DATA",
+            payload: data
+        })
+
+        // navigate("/dashboard");
+    }
+
+    catch (error) {
+        console.log("Error while searching word -> ", error);
+    }
+}
