@@ -20,15 +20,15 @@ function Dashboard() {
 
   return (
     <div className='dashboard'>
-      {searchData && searchData.searchData && searchData.searchData.map(searchPayload => (
-        <Chart
-          key={searchPayload.id}
-          dailySentiments = {searchPayload.dailySentiments}
-          searchWord = {searchPayload.searchWord}
-        />
-      ))
-
-      }
+      <div className="charts">
+        {searchData && searchData.searchData && searchData.searchData.map(searchPayload => (
+          <Chart
+            key={searchPayload.id}
+            dailySentiments = {searchPayload.dailySentiments}
+            searchWord = {searchPayload.searchWord}
+          />
+        ))}
+      </div>
 
     </div>
   )
