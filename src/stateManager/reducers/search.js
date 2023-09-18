@@ -1,9 +1,9 @@
-const searchReducer = (state = { searchData: null }, action) => {
+const searchReducer = (state = { searchData: null, searchResults: null }, action) => {
     switch (action.type) {
         case "SEARCH":
             // localStorage.setItem("profile", JSON.stringify(action?.payload));
 
-            return { ...state, searchData: action.payload }
+            return { ...state, searchResults: action.payload }
 
         case "GET SEARCH DATA":
 
