@@ -1,3 +1,9 @@
-#chart {
-    width: 500px;
+.chart {
+    width: 600px;
+    padding: 30px;
+    /* background-color: var(--light-color); */
+    /* box-shadow: 0px 4px 10px rgba(231, 209, 255, 0.5); */
+
+    box-shadow: 0px 8px 30px rgba(231, 209, 255, 0.5);
+    margin-bottom: 30px;
 }
