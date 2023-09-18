@@ -3,43 +3,45 @@ import ReactApexChart from 'react-apexcharts';
 import './Chart.css'
 
 const Chart = (props) => {
-    console.log(props.dailySentiments[0].date);
-    console.log(typeof props.dailySentiments[0].date);
     const positiveData = new Array(7).fill(null);
     const neutralData = new Array(7).fill(null);
     const negativeData = new Array(7).fill(null);
-    const dates = ["Day 1","Day 2","Day 3","Day 4","Day 5","Day 6","Day 7"];
+    const dates = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"];
 
-    for(let i = 0; i< props.dailySentiments.length; i++) {
+    console.log(props.dailySentiments.length);
+
+    for (let i = 0; i < props.dailySentiments.length; i++) {
         const date = props.dailySentiments[i].date.split('T')[0];
-        console.log(props.dailySentiments[i].date);
-        console.log(typeof props.dailySentiments[i].date);
 
         dates[i] = date;
         positiveData[i] = props.dailySentiments[i].sentiment.positive;
         neutralData[i] = props.dailySentiments[i].sentiment.neutral;
         negativeData[i] = props.dailySentiments[i].sentiment.negative;
     }
+
     const chartData = {
         series: [
             {
                 name: "Postive",
-                data: positiveData
+                data: positiveData,
+                color: '#00FF00'
             },
             {
                 name: "Neutral",
-                data: neutralData
+                data: neutralData,
+                color: '#808080'
             },
             {
                 name: "Negative",
-                data: negativeData
+                data: negativeData,
+                color: '#FF6F61'
             }
         ],
         options: {
             chart: {
                 height: 350,
                 width: 500,
-                type: 'line',
+                type: 'bar',
                 dropShadow: {
                     enabled: true,
                     color: '#000',
@@ -76,7 +78,7 @@ const Chart = (props) => {
             grid: {
                 borderColor: '#e7e7e7',
                 row: {
-                    colors: ['#f3f3f3', 'transparent'],
+                    colors: ['#E7D1FF', 'transparent'],
                     opacity: 0.5
                 },
             },
@@ -107,8 +109,10 @@ const Chart = (props) => {
     };
 
     return (
-        <div id="chart">
-            <ReactApexChart options={chartData.options} series={chartData.series} type="line" height={350} />
+        <div className="chart">
+            <div id="chart">
+                <ReactApexChart options={chartData.options} series={chartData.series} type="bar" height={350} />
+            </div>
         </div>
     );
 };
